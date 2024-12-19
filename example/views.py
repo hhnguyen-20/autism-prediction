@@ -3,11 +3,11 @@ import pandas as pd
 import joblib
 
 # Load the model and preprocessing objects once at startup
-model = joblib.load("support_vector_classifier.joblib")
-label_encoder = joblib.load("label_encoder.joblib")
-onehot_encoder = joblib.load("onehot_encoder.joblib")
-scaler = joblib.load("standard_scaler.joblib")
-features = joblib.load("features.joblib")
+model = joblib.load("notebook/support_vector_classifier.joblib")
+label_encoder = joblib.load("notebook/label_encoder.joblib")
+onehot_encoder = joblib.load("notebook/onehot_encoder.joblib")
+scaler = joblib.load("notebook/standard_scaler.joblib")
+features = joblib.load("notebook/features.joblib")
 
 # Identify columns that were label encoded and onehot encoded
 label_cols = ['gender', 'jundice', 'austim', 'used_app_before', 'age_desc']
@@ -116,9 +116,9 @@ def result(request):
     y_pred = model.predict(input_data)
 
     if y_pred[0] == 0:
-        final_result = "Case of autism: NO"
+        final_result = "Case of autism: No"
     else:
-        final_result = "Case of autism: YES"
+        final_result = "Case of autism: Yes"
 
     return render(request, "predict.html",
                   {"final_result": final_result,
