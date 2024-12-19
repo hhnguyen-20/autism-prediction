@@ -24,7 +24,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '0.0.0.0', 'autism-prediction-523y.onrender.com', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '0.0.0.0', 'autism-prediction-2025.onrender.com', 'localhost']
 
 # Application definition
 
