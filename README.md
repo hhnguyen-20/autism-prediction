@@ -111,6 +111,12 @@ pip install -r requirements.txt
 
 ## Create a `.env` file in the root directory of the project
 
+- Add the following environment variables to the `.env` file:
+
+```bash
+SECRET_KEY=your_secret_key
+```
+
 ## Running Locally
 
 ```bash
