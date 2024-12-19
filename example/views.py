@@ -1,6 +1,7 @@
 from django.shortcuts import render
 import pandas as pd
 import joblib
+from example.models import AutismFormInput
 
 # Load the model and preprocessing objects once at startup
 model = joblib.load("notebook/support_vector_classifier.joblib")
@@ -115,10 +116,36 @@ def result(request):
     # Predict
     y_pred = model.predict(input_data)
 
+    # Determine final_result
     if y_pred[0] == 0:
         final_result = "Case of autism: No"
     else:
         final_result = "Case of autism: Yes"
+
+    # Save the user input and predicted asd to the database in one go
+    AutismFormInput.objects.create(
+        a1_score=a1_score,
+        a2_score=a2_score,
+        a3_score=a3_score,
+        a4_score=a4_score,
+        a5_score=a5_score,
+        a6_score=a6_score,
+        a7_score=a7_score,
+        a8_score=a8_score,
+        a9_score=a9_score,
+        a10_score=a10_score,
+        total_score=total_score,
+        age_desc=age_desc,
+        age=age,
+        gender=gender,
+        ethnicity=ethnicity,
+        jundice=jundice,
+        austim=austim,
+        country_of_res=country_of_res,
+        used_app_before=used_app_before,
+        relation=relation,
+        asd=y_pred[0]
+    )
 
     return render(request, "predict.html",
                   {"final_result": final_result,

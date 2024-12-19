@@ -111,6 +111,73 @@
                 border-bottom: none;
             }
         }
+
+        /* Footer */
+        .footer {
+            background-color: #222; /* Dark background */
+            color: #ddd; /* Light text color */
+            padding: 10px 0; /* Smaller padding */
+            font-family: Arial, sans-serif;
+            text-align: center; /* Center all content */
+            font-size: 0.8rem; /* Smaller text */
+        }
+
+        .footer a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #00bcd4; /* Accent color */
+        }
+
+        /* Angular Repo Section */
+        .github-repo {
+            margin-top: 5px;
+            font-size: 0.8rem;
+            display: inline-flex; /* Align all inline elements */
+            align-items: center; /* Vertical centering */
+            gap: 5px; /* Space between elements */
+        }
+
+        .github-repo p {
+            margin: 0;
+        }
+
+        .github-link {
+            display: inline-flex; /* Align icons and text */
+            align-items: center;
+            gap: 3px; /* Space between text and icons */
+            color: #00bcd4;
+            text-decoration: none;
+        }
+
+        .github-star-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 2px; /* Minimal space */
+            font-weight: bold;
+            color: #ffca28;
+        }
+
+        .github-star-badge svg {
+            vertical-align: middle; /* Align icons vertically */
+            fill: #ffca28; /* Gold color for star */
+            transition: transform 0.3s ease;
+        }
+
+        /* Footer Text */
+        .footer-text strong {
+            color: #fff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer {
+                font-size: 0.7rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -349,4 +416,29 @@
     </div>
 </div>
 </body>
+
+<footer class="footer">
+    <!-- Copyright Section -->
+    <div class="footer-text text-center">
+        <p>&copy; 2024 All Rights Reserved. Designed by <strong>Huu Hung Nguyen</strong></p>
+    </div>
+
+    <!-- Angular Repo Star Section -->
+    <div class="github-repo">
+        <p>Love it?&nbsp;
+            <a href="https://github.com/hhnguyen-20/autism-prediction" target="_blank" rel="noopener"
+               class="github-link">
+                Give my repo a star.
+                <div class="github-star-badge">
+                    <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                         viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                    </svg>
+                    Star
+                </div>
+            </a>
+        </p>
+    </div>
+</footer>
 </html>
