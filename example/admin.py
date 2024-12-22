@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import AutismFormInput
+from .models import AutismData
 
 # Register your models here.
-admin.site.register(AutismFormInput)
+admin.site.register(AutismData)
