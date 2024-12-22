@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class AutismFormInput(models.Model):
+class AutismData(models.Model):
     # Fields corresponding to user inputs
     a1_score = models.IntegerField()
     a2_score = models.IntegerField()
