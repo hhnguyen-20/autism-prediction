@@ -2,6 +2,7 @@ from django.shortcuts import render
 import pandas as pd
 import joblib
 from example.models import AutismData
+from django.http import HttpResponse
 
 # Load the model and preprocessing objects once at startup
 model = joblib.load("notebook/support_vector_classifier.joblib")
@@ -150,3 +151,7 @@ def result(request):
     return render(request, "predict.html",
                   {"final_result": final_result,
                    "total_score": "Sum of scores from the 10 questions: " + str(total_score)})
+
+
+def health_check(request):
+    return HttpResponse("OK", status=200)
