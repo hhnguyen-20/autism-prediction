@@ -1,8 +1,8 @@
-# Django + Render
+# Django + Appliku
 
 ## Demo
 
-https://autism-prediction-2025.onrender.com/
+https://autismprediction.applikuapp.com
 
 ## How it Works
 
@@ -130,6 +130,6 @@ Your Django application is now available at `http://127.0.0.1:8000`.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1WW-IxgT9LA3Nf52Tiu29kcGeC-Du8jew?usp=sharing)
 
-## Deploy with Render
+## Deploy with Appliku
 
 
