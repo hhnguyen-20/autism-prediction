@@ -1,9 +1,15 @@
-.vercel
 *.log
 *.pyc
 __pycache__
 db.sqlite3
 media
+.idea
+*.py[cod]
+*$py.class
+.vscode
+.DS_Store
+.AppleDouble
+.LSOverride
 
 # Environments 
 .env 
