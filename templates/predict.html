@@ -10,11 +10,16 @@
             background: #ffffff;
         }
 
+        /* Container for the entire page */
         .container {
             display: flex;
             min-height: 100vh;
+            max-width: 1200px; /* Constrain the maximum width on large screens */
+            margin: 0 auto; /* Center the container horizontally */
+            box-sizing: border-box;
         }
 
+        /* Left panel (instructions) */
         .left-panel {
             width: 40%;
             background: #f7f7f7;
@@ -23,6 +28,7 @@
             border-right: 2px solid #ccc;
         }
 
+        /* Right panel (form) */
         .right-panel {
             width: 60%;
             padding: 40px;
@@ -32,15 +38,19 @@
         h1 {
             margin-top: 0;
             color: #333;
+            font-size: 1.8rem;
         }
 
         label {
             display: block;
             margin-bottom: 15px;
             color: #333;
+            line-height: 1.4;
         }
 
-        select, input[type=number], input[type=text] {
+        select,
+        input[type=number],
+        input[type=text] {
             width: 100%;
             padding: 8px;
             margin-top: 5px;
@@ -48,7 +58,9 @@
             border-radius: 4px;
         }
 
-        input[type=submit] {
+        input[type=submit],
+        .button-row a,
+        .button-row input[type=submit] {
             background: #4CAF50;
             color: white;
             border: none;
@@ -56,15 +68,19 @@
             cursor: pointer;
             border-radius: 4px;
             font-weight: bold;
+            text-decoration: none;
         }
 
-        input[type=submit]:hover {
+        input[type=submit]:hover,
+        .button-row a:hover,
+        .button-row input[type=submit]:hover {
             background: #45a049;
         }
 
         h2 {
             margin-top: 20px;
             color: #333;
+            font-size: 1.5rem;
         }
 
         p {
@@ -83,32 +99,56 @@
 
         .button-row a {
             display: inline-block;
-            background: #008CBA;
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 4px;
             margin-right: 10px;
         }
 
-        .button-row a:hover {
-            background: #007B9A;
-        }
-
-        /* Small screen adjustments */
-        @media (max-width: 800px) {
+        /* Responsive adjustments:
+           - Stack panels on smaller screens
+           - Adjust font sizes for better readability
+        */
+        @media (max-width: 992px) {
             .container {
                 flex-direction: column;
             }
 
-            .left-panel, .right-panel {
+            .left-panel,
+            .right-panel {
                 width: 100%;
                 border-right: none;
+            }
+
+            .left-panel {
                 border-bottom: 2px solid #ccc;
             }
 
             .right-panel {
                 border-bottom: none;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            label {
+                font-size: 0.9rem;
+            }
+
+            .info-section p {
+                font-size: 0.9rem;
+            }
+
+            input[type=submit],
+            .button-row a,
+            .button-row input[type=submit] {
+                padding: 8px 16px;
+                font-size: 0.9rem;
             }
         }
 
@@ -116,10 +156,11 @@
         .footer {
             background-color: #222; /* Dark background */
             color: #ddd; /* Light text color */
-            padding: 10px 0; /* Smaller padding */
+            padding: 15px 0; /* Some padding */
             font-family: Arial, sans-serif;
             text-align: center; /* Center all content */
-            font-size: 0.8rem; /* Smaller text */
+            font-size: 0.9rem; /* Slightly smaller text */
+            margin-top: auto; /* Stick to bottom if there's leftover space */
         }
 
         .footer a {
@@ -172,10 +213,10 @@
             color: #fff;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .footer {
-                font-size: 0.7rem;
+        /* Even smaller screens */
+        @media (max-width: 400px) {
+            .footer-text p {
+                font-size: 0.8rem;
             }
         }
     </style>
